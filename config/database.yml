@@ -1,0 +1,18 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
+  database: Locadora_development
+
+test:
+  <<: *default
+  database: Locadora_test
+
+production:
+  <<: *default
+  database: Locadora_production
+  username: Locadora
+  password: <%= ENV['LOCADORA_DATABASE_PASSWORD'] %>
