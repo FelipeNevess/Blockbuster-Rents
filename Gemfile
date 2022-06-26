@@ -3,6 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.1.2'
 
+gem 'devise'
 gem 'jbuilder', '~> 2.7'
 gem 'net-smtp'
 gem 'pg', '~> 1.1'
