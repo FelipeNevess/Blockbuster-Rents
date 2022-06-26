@@ -14,6 +14,114 @@
   </head>
 
   <body>
+    <header>
+      <div class="nav">
+        <div class="menu">
+          <button type="button">
+            <%= image_tag('menu.svg',  alt: "menu") %>
+          </button>
+        </div>
+        <div class="logo">
+          <%= link_to root_path do %>
+            <h1>LOGO</h1>
+          <% end %>
+        </div>
+      </div>
+      <div class="nav">
+        <div class="search">
+          <input type="text" class="input" placeholder="Filmes, séries, shows...">
+          <button type="button" class="btn">
+            <%= image_tag('search.svg', alt: "search") %>
+          </button>
+        </div>
+        <% if user_signed_in? %>
+          <div class="user">
+            <button type="button">
+              <%= image_tag('user.svg', alt: "user") %>
+            </button>
+          </div>
+        <% else %>
+          <nav class="login">
+            <ul>
+              <li>
+                <%= link_to 'Login', user_session_path %>
+              </li>
+              <li>
+                <%= link_to 'Cadastrar', new_user_registration_path %>
+              </li>
+            </ul>
+          </nav>
+        <% end %>
+      </div>
+    </header>
+
+    <nav class="nav-user">
+      <ul class="menu-user">
+        <li class="hover-list">
+          <a href="">
+            <%= image_tag('user.svg', alt: "user") %>
+            <span>Minha Conta</span>
+          </a>
+        </li>
+        <li class="hover-list">
+          <a href="">
+            <%= image_tag('heart.svg', alt: "heart") %>
+            <span>Favoritos</span>
+          </a>
+        </li>
+        <li class="hover-list">
+          <%= link_to destroy_user_session_path do %>
+            <%= image_tag('logout.svg', alt: "logout") %>
+            <span>Sair</span>
+          <% end %>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="nav-options">
+      <div class="content-options">
+        <h2>Gênero</h2>
+        <ul class="menu-options">
+          <li class="hover-list">
+            <a href="">
+              <span>Ação</span>
+            </a>
+          </li>
+          <li class="hover-list">
+            <a href="">
+              <span>Aventura</span>
+            </a>
+          </li>
+          <li class="hover-list">
+            <a href="">
+              <span>Clássicos</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="content-options">
+        <h2>Populares</h2>
+        <ul class="menu-options">
+          <li class="hover-list">
+            <a href="">
+              <span>Novidades</span>
+            </a>
+          </li>
+          <li class="hover-list">
+            <a href="">
+              <span>Top 10</span>
+            </a>
+          </li>
+          <li class="hover-list">
+            <a href="">
+              <span>Recomendados</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
     <%= yield %>
   </body>
 </html>
