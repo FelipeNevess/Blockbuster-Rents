@@ -4,6 +4,10 @@
   <%= render "devise/shared/error_messages", resource: resource %>
 
   <div class="field">
+    <%= f.file_field :avatar %>
+  </div>
+
+  <div class="field">
     <%= f.label :name %><br />
     <%= f.text_field :name %>
   </div>
