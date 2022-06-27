@@ -1,0 +1,24 @@
+<nav class="nav-user">
+  <ul class="menu-user">
+    <li class="hover-list">
+      <a href="">
+        <% if user_signed_in? %>
+          <%= image_tag(current_user.avatar_thumbnail, alt: "user", class: "user_avatar") %>
+        <% end %>
+        <span>Minha Conta</span>
+      </a>
+    </li>
+    <li class="hover-list">
+      <a href="">
+        <%= image_tag('heart.svg', alt: "heart") %>
+        <span>Favoritos</span>
+      </a>
+    </li>
+    <li class="hover-list">
+      <%= link_to destroy_user_session_path do %>
+        <%= image_tag('logout.svg', alt: "logout") %>
+        <span>Sair</span>
+      <% end %>
+    </li>
+  </ul>
+</nav>

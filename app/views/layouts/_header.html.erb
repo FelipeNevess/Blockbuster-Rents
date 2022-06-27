@@ -1,0 +1,44 @@
+<header>
+  <div class="nav">
+    <div class="menu">
+      <button type="button">
+        <%= image_tag('menu.svg',  alt: "menu") %>
+      </button>
+    </div>
+    <div class="logo">
+      <%= link_to root_path do %>
+        <h1>LOGO</h1>
+      <% end %>
+    </div>
+  </div>
+  <div class="nav">
+    <div class="search">
+      <input type="text" class="input" placeholder="Filmes, séries, shows...">
+      <button type="button" class="btn">
+        <%= image_tag('search.svg', alt: "search") %>
+      </button>
+    </div>
+    <% if user_signed_in? %>
+      <div class="user">
+        <button type="button">
+          <%= image_tag(current_user.avatar_thumbnail, alt: "user", class: "user_avatar") %>
+        </button>
+      </div>
+    <% else %>
+      <nav class="login">
+        <ul>
+          <li>
+            <%= link_to 'Login', user_session_path %>
+          </li>
+          <li>
+            <%= link_to 'Cadastrar', new_user_registration_path %>
+          </li>
+        </ul>
+      </nav>
+    <% end %>
+  </div>
+</header>
+
+<%= render 'users/nav_user' %>
+<%= render 'movies/nav_options' %>
+  
