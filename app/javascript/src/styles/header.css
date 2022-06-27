@@ -50,6 +50,13 @@ header {
   cursor: pointer;
 }
 
+.user_avatar {
+  width: 70%;
+  border-radius: 50%;
+  border: 1px solid #fff !important;
+  padding: 0 !important;
+}
+
 .login ul {
   display: flex;
   list-style-type: none;
