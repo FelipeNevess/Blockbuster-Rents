@@ -1,38 +1,39 @@
-<h2>Sign up</h2>
+<h1>Registar</h1>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
-  <div class="field">
-    <%= f.file_field :avatar %>
+  <div class="form-control input-file">
+    <%= f.label 'file-img' do %>
+      <%= image_tag('upload.svg') %>
+    <% end %>
+    <%= f.file_field 'file-img' %>
   </div>
 
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
+  <div class="form-control form-registration">
+    <%= f.label :name %>
+    <%= f.text_field :name, required: true %>
   </div>
   
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autocomplete: "email" %>
+  <div class="form-control form-registration">
+    <%= f.label :email %>
+    <%= f.email_field :email, autocomplete: "email", required: true %>
   </div>
 
-  <div class="field">
+  <div class="form-control form-registration">
     <%= f.label :password %>
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
+    <% end %>
+    <%= f.password_field :password, autocomplete: "new-password", required: true %>
   </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+  <div class="form-control form-registration">
+    <%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation, autocomplete: "new-password", required: true %>
   </div>
 
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
+  <%= f.submit "Sign up", class: 'btn btn-registration' %>
 <% end %>
 
-<%= render "devise/shared/links" %>
+<%# <%= render "devise/shared/links" %>
