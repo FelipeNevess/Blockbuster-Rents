@@ -1,19 +1,39 @@
-document.addEventListener('DOMContentLoaded', () => {
-  const search = document.querySelector('.search');
-  const btn = document.querySelector('.btn');
-  const input = document.querySelector('.input');
+window.onload = () => {
+  const body = document.body;
+
+  const buttonActiveSearch = document.querySelector('.btn');
+  const searchInput = document.querySelector('.search');
+  const inputName = document.querySelector('.input');
 
   const buttonMenu = document.querySelector('.menu');
   const navOptions = document.querySelector('.nav-options');
 
   const buttonMenuUser = document.querySelector('.user');
   const navUser = document.querySelector('.nav-user');
-
-  function eventHTML(button, nav, input = null) {
-    if (button && nav) {
-      button.addEventListener('click', () => {
-        nav.classList.toggle('active');
   
+  body.addEventListener('mouseover', ({ target: { className } }) => {
+    const tagActive = document.querySelector('.active');
+  
+    if (className === 'leyout-header') {
+      if (tagActive) {
+        tagActive.classList.remove('active');
+      }
+    }
+  });
+
+  function eventHTML(button, tags, input = null) {
+    if (button && tags) {
+      button.addEventListener('click', () => {
+        tags.forEach((v, i) => {
+          const activeValues = document.querySelectorAll('.active');
+  
+          v.classList.toggle('active');
+  
+          if (activeValues[i]) {
+            activeValues[i].classList.remove('active');
+          }
+        });
+      
         if (input) {
           input.focus();
         }
@@ -21,7 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
   
-  eventHTML(btn, search, input);
-  eventHTML(buttonMenu, navOptions);
-  eventHTML(buttonMenuUser, navUser);
-});
+  eventHTML(buttonActiveSearch, [searchInput], inputName);
+  eventHTML(buttonMenuUser, [navUser]);
+  eventHTML(buttonMenu, [navOptions]);
+};
