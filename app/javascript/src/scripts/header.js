@@ -1,7 +1,7 @@
 window.onload = () => {
   const body = document.body;
 
-  const buttonActiveSearch = document.querySelector('.btn');
+  const buttonActiveSearch = document.querySelector('.btn-search');
   const searchInput = document.querySelector('.search');
   const inputName = document.querySelector('.input');
 

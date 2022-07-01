@@ -3,7 +3,7 @@
 @import './reset.css';
 @import './colors.css';
 
-.logi-main {
+.login-main {
   background-color: var(--primary-color);
   color: rgb(120 120 120);
   display: flex;
@@ -22,6 +22,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  max-width: 415px;
 }
 
 .container-login h1 {
@@ -79,6 +80,10 @@ form {
   align-items: stretch;
 }
 
+.form-registration {
+  margin: 0 !important;
+}
+
 .form-control {
   position: relative;
   margin: 0 0 35px;
@@ -96,6 +101,44 @@ form {
 .form-control input:focus,
 .form-control input:valid {
   outline: 0;
+}
+
+.btn-registration {
+  margin-top: 10px;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+.input-file {
+  width: 50%;
+  margin: 0 auto;
+  margin-bottom: 10px;
+}
+
+.input-file:active {
+  transform: scale(0.98);
+}
+
+.input-file label {
+  display: flex;
+  padding: 20px 10px;
+  height: 79px;
+  background-color: #bbedb7;
+  border-radius: 5px;
+  border: dotted;
+  cursor: pointer;
+  justify-content: center;
+}
+
+.input-file label:hover {
+  transition: .5s;
+  background-color: #88d682;
+}
+
+.input-file label img {
+  width: 50px;
 }
 
 @media (max-width: 551px) {
