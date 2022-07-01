@@ -1,0 +1,8 @@
+:root {
+  --display-flex: flex;
+  --flex-direction-column: column;
+  --flex-direction-row: row;
+  --justify-content-center: center;
+  --align-items-center: center;
+  --width-full: 100%;
+}

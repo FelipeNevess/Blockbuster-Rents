@@ -6,6 +6,7 @@
 @import './menu-options.css';
 @import './menu-user-options.css';
 @import './login.css';
+@import './user.css';
 
 body {
   background-color: var(--secondary-color);
