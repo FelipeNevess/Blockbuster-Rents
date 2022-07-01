@@ -1,50 +1,41 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<main class="main-user">
+  <header class="user-header">
+    <h1 class="df df_alc fw_bigue">Minha conta</h1>
+  </header>
+  <div class="content-form-user df">
+    <nav class="sidebar fw_light df df_fdc">
+      <a href="/account/register" class="hover-list selected">Cadastro</a>
+      <%= link_to "Alterar Senha", edit_user_registration_path, class: "hover-list" %>
+      <a href="/account/favorites" class="hover-list">Favoritos</a>
+    </nav>
+    
+    <div class="content-form">
+      <section class="section-registration">
+        <header>
+          <h2 class="form-title">Alterar senha</h2>
+        </header>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+        <%= form_for(resource, as: resource_name, url: registration_path(resource_name), class: 'form-name-user', html: { method: :put }) do |f| %>
+          <div class="input-name-form-user w-input df df_fdc">
+            <%= f.label :current_password %>
+            <%= f.password_field :current_password, autocomplete: "current-password", placeholder: "Insira a sua senha atual", id: 'current_password' %>
+          </div>
 
-  <div class="field">
-    <%= f.file_field :avatar %>
+          <div class="input-name-form-user w-input df df_fdc">
+            <%= f.label :password %>
+            <%= f.password_field :password, autocomplete: "new-password", placeholder: "Insira uma nova senha", id: "new_password" %>
+          </div>
+
+          <div class="input-name-form-user w-input df df_fdc">
+            <%= f.label :password_confirmation %>
+            <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "Confirme a sua nova senha", id: "confirm_password" %>
+          </div>
+
+          <div class="button-edit-user button-edit-password w-input">
+            <%= f.button "Alterar cadastro", type: "submit", class: "fw_light" %>
+          </div>
+        <% end %>
+      </section>
+    </div>
   </div>
-
-  <div class="field">
-    <%= f.text_field :name, placeholder: 'Nome' %>
-  </div>
-
-  <div class="field">
-    <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: 'Email' %>
-  </div>
-
-  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-    <%= f.password_field :password, autocomplete: "new-password", placeholder: 'Nova senha' %>
-    <% if @minimum_password_length %>
-      <br />
-      <em><%= @minimum_password_length %> characters minimum</em>
-    <% end %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: 'Confirmar senha' %>
-  </div>
-
-  <div class="field">
-    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-    <%= f.password_field :current_password, autocomplete: "current-password" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Update" %>
-  </div>
-<% end %>
-
-<h3>Cancel my account</h3>
-
-<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
-
-<%= link_to "Back", :back %>
+</main>

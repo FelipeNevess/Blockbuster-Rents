@@ -4,10 +4,10 @@
   <%= render "devise/shared/error_messages", resource: resource %>
 
   <div class="form-control input-file">
-    <%= f.label 'file-img' do %>
+    <%= f.label :avatar do %>
       <%= image_tag('upload.svg') %>
     <% end %>
-    <%= f.file_field 'file-img' %>
+    <%= f.file_field :avatar %>
   </div>
 
   <div class="form-control form-registration">
