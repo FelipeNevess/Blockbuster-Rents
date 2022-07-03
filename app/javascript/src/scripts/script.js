@@ -55,6 +55,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (button) {
       button.addEventListener('click', () => {
+        if (button.value === 'Editar') {
+          button.value = 'Cancelar';
+        } else {
+          button.value = 'Editar';
+        }
+
         inputHabilit.forEach((i) => {
           if (i.disabled === false) {
             i.disabled = true
