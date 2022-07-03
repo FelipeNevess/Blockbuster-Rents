@@ -14,4 +14,5 @@ Rails.application.routes.draw do
   get 'accounts/favorites'
 
   patch 'profile_name', to: 'users#update_name'
+  patch 'profile_password', to: 'users#update_password'
 end
