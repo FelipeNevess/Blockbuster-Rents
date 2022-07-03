@@ -1,18 +1,17 @@
 class UsersController < ApplicationController
-  def edit; end
-
-  def update
+  def update_name
     if current_user.update(user_params)
-      redirect_to root_path, notice: 'Seu perfil foi atualizado com sucesso.'
+      redirect_to accounts_register_path, notice: 'Nome foi atualizado com sucesso.'
     else
       flash.now[:alert] = current_user.errors.full_messages.to_sentence
-      render :edit
+
+      redirect_to accounts_register_path
     end
   end
 
   private
 
   def user_params
-    params.require(:user).permit(:name, :avatar)
+    params.require(:user).permit(:name)
   end
 end
