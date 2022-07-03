@@ -4,6 +4,7 @@ import * as ActiveStorage from "@rails/activestorage";
 
 import "channels";
 import "../src/scripts/script";
+import "../src/scripts/fetch";
 
 import "../src/styles/main.css";
 
