@@ -3,7 +3,8 @@ import Turbolinks from "turbolinks";
 import * as ActiveStorage from "@rails/activestorage";
 
 import "channels";
-import "../src/scripts/header";
+import "../src/scripts/script";
+
 import "../src/styles/main.css";
 
 Rails.start();
