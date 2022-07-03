@@ -1,7 +1,7 @@
 <nav class="nav-user">
   <ul class="menu-user">
     <li class="hover-list">
-      <%= link_to edit_user_registration_path do %>
+      <%= link_to accounts_register_path do %>
         <% if user_signed_in? %>
           <%= image_tag(current_user.avatar_thumbnail, alt: "user", class: "user_avatar") %>
         <% end %>
