@@ -8,4 +8,10 @@ Rails.application.routes.draw do
   }
 
   resources :movies
+
+  get 'accounts/register'
+  get 'accounts/change_password'
+  get 'accounts/favorites'
+
+  patch 'profile_name', to: 'users#update_name'
 end
