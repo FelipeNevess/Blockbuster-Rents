@@ -5,6 +5,8 @@ import * as ActiveStorage from "@rails/activestorage";
 import "channels";
 import "../src/scripts/script";
 import "../src/scripts/fetch";
+import "../src/scripts/swiper_carousel";
+import "../src/scripts/swiper_card";
 
 import "../src/styles/main.css";
 
