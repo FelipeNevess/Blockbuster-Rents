@@ -1,7 +1,7 @@
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('turbolinks:load', () => {
   const buttonSubmit = document.querySelector('.search-cep');
 
-  var myInit = {
+  let myInit = {
     method: 'GET',
     cache: 'default'
   };
@@ -27,7 +27,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   }
 
-  buttonSubmit.addEventListener('click', () => {
-    zipCodeValidation();
-  });
+  if (buttonSubmit) {
+    buttonSubmit.addEventListener('click', () => {
+      zipCodeValidation();
+    });
+  }
 });

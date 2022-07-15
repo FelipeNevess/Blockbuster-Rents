@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('turbolinks:load', () => {
   new Swiper(".mySwiperCarousel ", {
     loop: true,
     autoplay: {

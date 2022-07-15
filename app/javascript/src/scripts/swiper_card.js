@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('turbolinks:load', () => {
   new Swiper(".mySwiperCard", {
     centerSlide: true,
     centeredSlidesBounds: true,
