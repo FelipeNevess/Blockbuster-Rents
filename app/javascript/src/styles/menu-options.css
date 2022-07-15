@@ -8,6 +8,7 @@
   transition: .6s;
   visibility: hidden;
   overflow-y: hidden;
+  z-index: 999;
 }
 
 .nav-options.active {

@@ -7,6 +7,7 @@
 @import './menu-user-options.css';
 @import './login.css';
 @import './user.css';
+@import './swiper.css';
 
 body {
   background-color: var(--secondary-color);
