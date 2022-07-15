@@ -7,7 +7,9 @@ Rails.application.routes.draw do
     sign_up: ''
   }
 
-  resources :movies
+  resources :movies, except: :show
+
+  get 'media/movies/:id/:title', to: 'movies#show', as: 'media_movie'
 
   get 'accounts/register'
   get 'accounts/change_password'
