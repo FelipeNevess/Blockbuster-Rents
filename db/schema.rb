@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_06_26_191316) do
+ActiveRecord::Schema.define(version: 2022_07_14_174923) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,12 +43,59 @@ ActiveRecord::Schema.define(version: 2022_06_26_191316) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
+  create_table "actors", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "categories", force: :cascade do |t|
+    t.string "category"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "directors", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "movie_actors", force: :cascade do |t|
+    t.bigint "movie_id"
+    t.bigint "actor_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["actor_id"], name: "index_movie_actors_on_actor_id"
+    t.index ["movie_id"], name: "index_movie_actors_on_movie_id"
+  end
+
+  create_table "movie_categories", force: :cascade do |t|
+    t.bigint "category_id"
+    t.bigint "movie_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["category_id"], name: "index_movie_categories_on_category_id"
+    t.index ["movie_id"], name: "index_movie_categories_on_movie_id"
+  end
+
+  create_table "movie_directors", force: :cascade do |t|
+    t.bigint "movie_id", null: false
+    t.bigint "director_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["director_id"], name: "index_movie_directors_on_director_id"
+    t.index ["movie_id"], name: "index_movie_directors_on_movie_id"
+  end
+
   create_table "movies", force: :cascade do |t|
-    t.string "title", null: false
-    t.integer "release_year", null: false
-    t.string "duration", null: false
-    t.string "classification", null: false
-    t.text "description", null: false
+    t.string "title"
+    t.string "title_producer"
+    t.string "release_year"
+    t.text "description"
+    t.string "background_image"
+    t.string "background_video"
+    t.string "card_image"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -68,4 +115,10 @@ ActiveRecord::Schema.define(version: 2022_06_26_191316) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "movie_actors", "actors"
+  add_foreign_key "movie_actors", "movies"
+  add_foreign_key "movie_categories", "categories"
+  add_foreign_key "movie_categories", "movies"
+  add_foreign_key "movie_directors", "directors"
+  add_foreign_key "movie_directors", "movies"
 end
