@@ -1,16 +1,13 @@
 class MoviesController < ApplicationController
+  include OptionsCategories
+
   before_action :set_movie, only: %i[show edit update destroy]
+  before_action :set_movie_category
 
   def index
     @movies = Movie.all
 
     @first_movie = Movie.first(7)
-    @categories = Category.where(
-      category: %w[
-        Ação Aventura Drama Romance Crime
-        Suspense Terror Animção Documentários
-      ]
-    )
   end
 
   def show; end
