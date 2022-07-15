@@ -7,6 +7,7 @@ import "../src/scripts/script";
 import "../src/scripts/fetch";
 import "../src/scripts/swiper_carousel";
 import "../src/scripts/swiper_card";
+import "../src/scripts/video_play";
 
 import "../src/styles/main.css";
 
