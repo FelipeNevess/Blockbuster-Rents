@@ -7,8 +7,10 @@
 @import './menu-user-options.css';
 @import './login.css';
 @import './user.css';
+@import './movie_datails.css';
 @import './swiper.css';
+@import './footer.css';
 
 body {
-  background-color: var(--secondary-color);
+  background-color: #16041b;
 }

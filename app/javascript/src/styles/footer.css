@@ -1,0 +1,40 @@
+footer {
+  display: flex;
+  align-items: center;
+  padding-bottom: 3.2rem;
+  color: #fafafa;
+  height: 50%;
+  min-height: 15rem;
+}
+
+.content-footer {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin: 0 auto;
+}
+
+.content-footer h2 {
+  font-size: 1rem;
+}
+
+.content-footer div {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.content-footer div a {
+  margin: 0 .3rem;
+}
+
+.content-footer div img {
+  width: 3rem;
+  height: 3rem;
+}
+
+.content-footer span {
+  color: #868686;
+}
