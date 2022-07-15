@@ -1,0 +1,34 @@
+<section class="swiper mySwiperCarousel">
+  <div class="swiper-wrapper">
+
+    <% @first_movie.each do |movie| %>
+      <%= link_to '', class: "swiper-slide" do %>
+        <%= image_tag(movie.background_image, alt: movie.title) %>
+      <% end %>
+    <% end %>
+  </div>
+  <div class="swiper-pagination"></div>
+</section>
+
+<% @categories.each do |category| %>
+  <section class="swiper-cards">
+    <div class="swiper mySwiperCard">
+      <a href="">
+        <header>
+          <h2><%= category.category %></h2>
+        </header>
+      </a>
+      <div class="swiper-wrapper">
+        <% search_movie_by_category(category).each do |movie| %>
+          <div class="swiper-slide slide-card">
+            <a href="">
+              <%= image_tag(movie.card_image.to_str, alt: movie.title) %>
+            </a>
+          </div>
+        <% end %>
+      </div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+    </div>
+  </section>
+<% end %>
