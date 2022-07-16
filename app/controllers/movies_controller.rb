@@ -10,6 +10,8 @@ class MoviesController < ApplicationController
     @first_movie = Movie.first(7)
   end
 
+  def movies_catalog; end
+
   def show; end
 
   def new
