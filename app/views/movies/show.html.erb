@@ -1,29 +1,120 @@
-<p id="notice"><%= notice %></p>
+<main class="main-movie-details">
+  <div class="main-movie-details-content">
+    <div class="video-play-container">
+      <div class="movie-config mobile-video-play">
+        <video loop muted class="video">
+          <source src="<%= @movie.background_video %>" type="video/mp4">
+        </video>
 
-<p>
-  <strong>Title:</strong>
-  <%= @movie.title %>
-</p>
+        <div class="play">
+          <div></div>
+        </div>
+        
+        <%= image_tag(@movie.background_image, class: "movie-image movie-image-mobile", alt: @movie.title)%>
+      </div>
+    </div>
 
-<p>
-  <strong>Release year:</strong>
-  <%= @movie.release_year %>
-</p>
+    <div class="button-video-play">
+      <button type="button" class="play-start-movie">
+        <%= image_tag('play.svg', alt: 'play') %>
+      </button>
+      
+      <button type="button" class="button-audio">
+        <%= image_tag('volume.svg', alt: 'volume') %>
+      </button>
 
-<p>
-  <strong>Duration:</strong>
-  <%= @movie.duration %>
-</p>
+      <button type="button" class="display-details">
+        <%= image_tag('display.svg', alt: 'display') %>
+      </button>
+    </div>
 
-<p>
-  <strong>Classification:</strong>
-  <%= @movie.classification %>
-</p>
+    <div class="movie-infos">
+      <div class="content-infos">
+        <div class="details-header">
+          <h1><%= @movie.title %></h1>
+          <p>(<%= @movie.title_producer %>)</p>
+        </div>
+        
+        <div class="details video-details-duration">
+          <p>2010</p>
+          <p>Estados Unidos</p>
+          <p>88 minutos</p>
+        </div>
 
-<p>
-  <strong>Description:</strong>
-  <%= @movie.description %>
-</p>
+        <div class="validation-movie">
+          <span>x</span>
+          <span>x</span>
+          <span>x</span>
+          <span>x</span>
+          <span>x</span>
+        </div>
 
-<%= link_to 'Edit', edit_movie_path(@movie) %> |
-<%= link_to 'Back', movies_path %>
+        <div class="favorite-movie">
+          <%= image_tag('heart.svg', alt: 'heart') %>
+          <span>(Adicionar aos favoritos)</span>
+        </div>
+
+        <div class="category-movie">
+          <% @movie.categories.each do |category| %>
+            <span><%= category.category %>,</span>
+          <% end %>
+        </div>
+
+        <div class="movie-language">
+          <p>Dublado | HD</p>
+          <p>Português</p>
+        </div>
+
+        <div class="description-movie">
+          <p><%= @movie.description %></p>
+        </div>
+
+        <div class="actors-movie">
+          <h3>Atores</h3>
+          <ul>
+            <% @movie.actors.each do |actor| %>
+              <li><%= actor.name %></li>
+            <% end %>
+          </ul>
+        </div>
+
+        <div class="directors-movie">
+          <h3>Diretores</h3>
+          <ul>
+            <% @movie.directors.each do |director| %>
+              <li><%= director.name %></li>
+            <% end %>
+          </ul>
+        </div>
+
+        <div class="button-add-movie">
+          <div>
+            <button type="button">ALUGAR AGORA</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<section class="swiper-cards">
+  <div class="swiper mySwiperCard">
+    <a href="">
+      <header>
+        <h2>Você também pode gostar</h2>
+      </header>
+    </a>
+    <div class="swiper-wrapper">
+      <% search_movie_by_category(@movie.categories[0].id).each do |movie| %>
+        <div class="swiper-slide slide-card">
+          <%= link_to media_movie_path(movie.id, movie.title) do %>
+            <%= image_tag(movie.card_image, alt: movie.title) %>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+  </div>
+</section>
