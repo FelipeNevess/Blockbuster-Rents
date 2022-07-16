@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   resources :movies, except: :show
 
   get 'media/movies/:id/:title', to: 'movies#show', as: 'media_movie'
+  get 'catalog/:id/:catalog_name', to: 'movies#movies_catalog', as: 'movie_catalog'
 
   get 'accounts/register'
   get 'accounts/change_password'
