@@ -11,6 +11,7 @@
 @import './swiper.css';
 @import './footer.css';
 @import './movie_card.css';
+@import './mobile_header.css';
 
 body {
   background-color: #16041b;
