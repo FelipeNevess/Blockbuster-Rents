@@ -1,6 +1,5 @@
 <section class="swiper mySwiperCarousel">
   <div class="swiper-wrapper">
-
     <% @first_movie.each do |movie| %>
       <%= link_to '', class: "swiper-slide" do %>
         <%= image_tag(movie.background_image, alt: movie.title) %>
@@ -13,17 +12,17 @@
 <% @categories.each do |category| %>
   <section class="swiper-cards">
     <div class="swiper mySwiperCard">
-      <a href="">
+      <%= link_to movie_catalog_path(category.id, category.category) do %>
         <header>
           <h2><%= category.category %></h2>
         </header>
-      </a>
+      <% end %>
       <div class="swiper-wrapper">
-        <% search_movie_by_category(category).each do |movie| %>
+        <% search_movie_by_category(category.id).each do |movie| %>
           <div class="swiper-slide slide-card">
-            <a href="">
+            <%= link_to media_movie_path(movie.id, movie.title) do %>
               <%= image_tag(movie.card_image.to_str, alt: movie.title) %>
-            </a>
+            <% end %>
           </div>
         <% end %>
       </div>
