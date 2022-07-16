@@ -298,5 +298,9 @@ button:hover, .fw_light {
     background: transparent;
     border: 0.1rem solid #66127d;
   }
+
+  .selected {
+    background-image: none !important;
+  }
 }
 
