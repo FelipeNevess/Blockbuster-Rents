@@ -8,7 +8,7 @@ document.addEventListener('turbolinks:load', () => {
   const buttonMenu = document.querySelector('.menu');
   const navOptions = document.querySelector('.nav-options');
 
-  const buttonMenuUser = document.querySelector('.user');
+  const buttonMenuUser = document.querySelector('.button-nav-user');
   const navUser = document.querySelector('.nav-user');
 
   const buttonHabilitInput = document.getElementById('habilit-input-edit');
@@ -19,6 +19,14 @@ document.addEventListener('turbolinks:load', () => {
 
   const buttonsEditInputs = document.querySelectorAll('.buttons-desable');
   const inputsAddress = document.querySelectorAll('.disable');
+
+  const navOptionsMobile = document.querySelector('.nav-options-mobile');
+  const buttonActiveNavGenre = document.querySelector('.genre-list');
+
+  const navOptionSearchMobile = document.querySelector('.nav-search-mobile');
+  const buttonActiveSearchNav = document.querySelector('.search-button');
+
+  const buttonsExit = document.querySelectorAll('.nav-exit');
   
   body.addEventListener('mouseover', ({ target: { className } }) => {
     const tagActive = document.querySelector('.active');
@@ -30,12 +38,23 @@ document.addEventListener('turbolinks:load', () => {
     }
   });
 
+  function exitModal(buttons, modal) {
+    if (buttons) {
+      buttons.forEach((button) => {
+        button.addEventListener('click', () => {
+          modal.forEach((m) => {
+            m.classList.remove('active');
+          });
+        });
+      })
+    }
+  }
+
   function eventHTML(button, tags, input = null) {
     if (button && tags) {
       button.addEventListener('click', () => {
         tags.forEach((v, i) => {
           const activeValues = document.querySelectorAll('.active');
-  
           v.classList.toggle('active');
   
           if (activeValues[i]) {
@@ -76,6 +95,10 @@ document.addEventListener('turbolinks:load', () => {
   eventHTML(buttonActiveSearch, [searchInput], inputName);
   eventHTML(buttonMenuUser, [navUser]);
   eventHTML(buttonMenu, [navOptions]);
+  eventHTML(buttonActiveNavGenre, [navOptionsMobile]);
+  eventHTML(buttonActiveSearchNav, [navOptionSearchMobile]);
+
+  exitModal(buttonsExit, [navOptionsMobile, navOptionSearchMobile]);
 
   abilitInputsEdition(buttonHabilitInput, [buttonEditNameUser], [inputEditName]);
   abilitInputsEdition(buttonHabilitInputs, buttonsEditInputs, inputsAddress);
