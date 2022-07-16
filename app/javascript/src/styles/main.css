@@ -10,6 +10,7 @@
 @import './movie_datails.css';
 @import './swiper.css';
 @import './footer.css';
+@import './movie_card.css';
 
 body {
   background-color: #16041b;

@@ -1,0 +1,49 @@
+.main-movies header{
+  padding-top: 6rem;
+  margin-bottom: .6rem;
+  border-bottom: 0.1rem solid var(--white-color);
+  padding-left: 1.6rem;
+  width: fit-content;
+  border-image: linear-gradient(90deg,#fafafa,#db0a0a00) 30% 1;
+}
+
+.main-movies header h1 {
+  font-size: 1.3rem;
+  font-weight: inherit;
+  color: var(--white-color);
+  padding-bottom: 0.5rem;
+}
+
+.main-movies div {
+  width: 90%;
+  max-width: 110rem;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.main-movies div ul {
+  display: flex;
+  flex-wrap: wrap;
+  flex-grow: 0;
+  align-items: center;
+  justify-content: center
+}
+
+.main-movies div ul li {
+  cursor: pointer;
+  vertical-align: middle;
+  margin: 1rem 0.5rem;
+  list-style-type: none;
+}
+
+.main-movies div ul li div a img {
+  border-radius: 4px;
+}
+
+.main-movies div ul li div a img:hover {
+  position: relative;
+  z-index: 999;
+  transition: .35s;
+  transform: scale(1.08) !important;
+  box-shadow: 8px 3px 20px 0px rgb(0 0 0 / 40%);
+}
