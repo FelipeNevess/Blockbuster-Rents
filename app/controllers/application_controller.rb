@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-  before_action :authenticate_user!, except: %i[index show]
+  before_action :authenticate_user!, except: %i[index show movies_catalog]
   before_action :configure_permitted_parameters, if: :devise_controller?
 
   layout :layout_by_resource, except: %i[edit]
