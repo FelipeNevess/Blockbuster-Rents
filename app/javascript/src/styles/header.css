@@ -4,6 +4,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: fixed;
+  z-index: 999;
   background-color: var(--primary-color);
   box-shadow: 0 2px 10px rgb(49 49 49 / 50%);
   width: 100%;

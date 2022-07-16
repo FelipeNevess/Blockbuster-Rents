@@ -2,7 +2,7 @@
   background-color: rgba(68,68,68,.84);
   display: block;
   backdrop-filter: blur(10px)!important;
-  position: absolute;
+  position: fixed;
   width: 400px;
   transition: .6s;
   top: 62px;
