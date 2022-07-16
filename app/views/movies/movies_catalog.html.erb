@@ -1,0 +1,19 @@
+<main class="main-movies">
+  <header>
+    <h1><%= params[:catalog_name] %></h1>
+  </header>
+
+  <div>
+    <ul>
+      <% search_movie_by_category(params[:id]).each do |movie| %>
+        <li>
+          <div>
+            <%= link_to media_movie_path(movie.id, movie.title) do %>
+              <%= image_tag(movie.card_image) %>
+            <% end %>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</main>
