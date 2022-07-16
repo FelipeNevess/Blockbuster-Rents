@@ -18,13 +18,13 @@
   height: calc(100vh - 62px)
 }
 
-.content-options:nth-child(2) {
-  border-left: 1px solid #4f4f4f;
-}
-
 .content-options {
   width: 100%;
   margin-left: 0.8rem;
+}
+
+.desable-options-desk {
+  display: none;
 }
 
 .content-options h2 {
@@ -33,6 +33,19 @@
   font-size: 1.1rem;
   padding: .8rem 1.6rem;
   color: #fdc20f;
+}
+
+.content-options:nth-child(3) {
+  border-left: 1px solid #4f4f4f;
+}
+
+/* .content-options:nth-child(1) {
+  display: none;
+} */
+
+.content-options {
+  width: 50%;
+  margin-left: 0.8rem;
 }
 
 .menu-options {
@@ -47,4 +60,124 @@
   font-size: 0.9rem;
   font-weight: 700;
   margin-left: .8rem;
+}
+
+.nav-search-mobile, .nav-options-mobile {
+  display: flex;
+  justify-content: center;
+  background-color: rgba(68,68,68,.84);
+  backdrop-filter: blur(10px)!important;
+  width: 100%;
+  height: 0;
+  position: fixed;
+  transition: .6s;
+  visibility: hidden;
+  overflow-y: hidden;
+  z-index: 100;
+  top: 60px;
+}
+
+.nav-search-mobile {
+  align-items: center;
+  flex-direction: column;
+}
+
+.nav-search-mobile button {
+  margin: 23px;
+  padding: 14px;
+  width: 50%;
+  border-radius: 20px;
+  background-color: #66127d;
+  color: #fff;
+  margin-bottom: 14rem;
+  cursor: pointer;
+}
+
+.nav-options-mobile.active,
+.nav-search-mobile.active {
+  height: 100%;
+  visibility: visible;
+}
+
+.nav-exit::after, .nav-exit:active{
+  position: absolute;
+  top: 0;
+  right: 0;
+  content: "\2716";
+  font-size: 2rem;
+  color: #FFF;
+  padding: 22px;
+  cursor: pointer;
+}
+
+.search-mobile {
+  display: flex;
+}
+
+.btn-mobile,
+.search-mobile input {
+  border-bottom: 1px solid #7c7c7c;
+  background-color: transparent;
+}
+
+.search-mobile input {
+  width: 100%;
+  padding: 10px;
+  color: white;
+}
+
+.btn-mobile img {
+  width: 37px;
+  padding: 6px;
+}
+
+.nav-exit:active, .nav-search-mobile button:active {
+  transform: scale(0.98);
+}
+
+@media (max-width: 551px) {
+  .desable-options-desk {
+    display: block;
+  }
+
+  .content-options:nth-child(2),
+  .content-options:nth-child(3) {
+    display: none;
+  }
+
+  .content-options:nth-child(1) {
+    display: block;
+    margin: 20px 0 0 0;
+  }
+
+  .nav-options {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .menu-user {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 50%;
+  }
+
+  .hover-list,
+  .content-options h2 {
+    margin: .4rem 0;
+    text-align: center;
+  }
+
+  .hover-list:hover {
+    background-image: none;
+  }
+
+  .menu-options li a {
+    margin: 0;
+  }
+
+  .content-options h2 {
+    font-size: 1.8rem;
+  }
 }

@@ -39,6 +39,7 @@
   margin: 1rem;
   color: var(--white-color);
   text-decoration: none;
+  min-width: 172px;
 }
 
 .menu-user li a span {
@@ -54,6 +55,16 @@
 @media (max-width: 399px) {
   .nav-user {
     width: 100%;
+  }
+}
+
+@media (max-width: 550px) {
+  .hover-list:hover {
+    background-image: none;
+  }
+
+  .user-avatar {
+    display: none !important;
   }
 }
 

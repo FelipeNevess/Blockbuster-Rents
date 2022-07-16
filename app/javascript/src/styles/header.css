@@ -120,4 +120,8 @@
   .search, .login ul li:nth-child(2) {
     display: none !important;
   }
+
+  .desable-menu {
+    display: none !important;
+  }
 }
