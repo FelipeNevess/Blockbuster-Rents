@@ -1,0 +1,36 @@
+<ul class="nav-mobile">
+  <li>
+    <div>
+      <%= link_to root_path do %>
+        <%= image_tag("home.svg", alt: "home") %>
+        <span>Home</span>
+      <% end %>
+    </div>
+  </li>
+  <li>
+    <div>
+      <button>
+        <%= image_tag("search.svg", alt: "search", class: "search-button") %>
+        <span>Busca</span>
+      </button>
+    </div>
+  </li>
+  <li>
+    <div>
+      <button>
+        <%= image_tag("list.svg", alt: "list", class: "genre-list") %>
+        <span>Generos</span>
+      </button>
+    </div>
+  </li>
+  <% if user_signed_in? %>
+    <li>
+      <div>
+        <%= link_to root_path do %>
+          <%= image_tag("heart.svg", alt: "heart") %>
+          <span>Favoritos</span>
+        <% end %>
+      </div>
+    </li>
+  <% end %>
+</ul>

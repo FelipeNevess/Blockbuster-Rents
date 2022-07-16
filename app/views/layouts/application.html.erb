@@ -6,12 +6,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-    <link rel="stylesheet" href="./styles/main.css">
-
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/swiper/swiper-bundle.min.css"
-    />
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
     
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -27,8 +22,9 @@
 
     <main>
       <%= yield %>
-    </main>
 
+      <%= render "layouts/nav_header_mobile" %>
+    </main>
     <%= render "layouts/footer" %>
   </body>
 </html>
