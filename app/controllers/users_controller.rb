@@ -1,27 +1,30 @@
 class UsersController < ApplicationController
-  def update_name
-    if current_user.update(user_params)
-      redirect_to accounts_register_path, notice: 'Nome foi atualizado com sucesso.'
+  include OptionsCategories
+
+  before_action :set_movie_category
+
+  def edit; end
+
+  def update
+    if current_user.update(users_params)
+      redirect_to accounts_register_path, notice: "#{users_params.keys[0]} foi atualizado com sucesso."
     else
       flash.now[:alert] = current_user.errors.full_messages.to_sentence
-
-      redirect_to accounts_register_path
+      render :edit
     end
   end
 
-  def update_password
-    if current_user.update(user_params)
-      redirect_to root_path, notice: 'Senha atualizada com sucesso.'
-    else
-      flash.now[:alert] = current_user.errors.full_messages.to_sentence
+  def update_name
+    update
+  end
 
-      redirect_to accounts_register_path
-    end
+  def update_password
+    update
   end
 
   private
 
-  def user_params
+  def users_params
     params.require(:user).permit(:name, :password, :password_confirmation)
   end
 end
