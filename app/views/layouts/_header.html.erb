@@ -1,6 +1,6 @@
 <header class="leyout-header">
   <div class="nav">
-    <div class="menu">
+    <div class="menu <% unless user_signed_in? %>desable-menu<% end %>">
       <button type="button">
         <%= image_tag('menu.svg',  alt: "menu") %>
       </button>
@@ -19,8 +19,8 @@
       </button>
     </div>
     <% if user_signed_in? %>
-      <div class="user">
-        <button type="button">
+      <div class="user-avatar">
+        <button type="button" class="button-nav-user">
           <%= image_tag(current_user.avatar_thumbnail, alt: "user", class: "user_avatar") %>
         </button>
       </div>
@@ -31,7 +31,7 @@
             <%= link_to 'Login', user_session_path %>
           </li>
           <li>
-            <%= link_to 'Cadastrar', new_user_registration_path %>
+            <%= link_to 'Cadastrar', new_user_session_path %>
           </li>
         </ul>
       </nav>
