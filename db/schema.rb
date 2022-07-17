@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_07_14_174923) do
+ActiveRecord::Schema.define(version: 2022_07_17_133207) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -47,6 +47,19 @@ ActiveRecord::Schema.define(version: 2022_07_14_174923) do
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "addresses", force: :cascade do |t|
+    t.integer "zip_code", null: false
+    t.string "city", null: false
+    t.string "state", null: false
+    t.string "street", null: false
+    t.integer "number", null: false
+    t.string "complement"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_addresses_on_user_id"
   end
 
   create_table "categories", force: :cascade do |t|
@@ -115,6 +128,7 @@ ActiveRecord::Schema.define(version: 2022_07_14_174923) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "addresses", "users"
   add_foreign_key "movie_actors", "actors"
   add_foreign_key "movie_actors", "movies"
   add_foreign_key "movie_categories", "categories"
