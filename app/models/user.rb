@@ -17,4 +17,6 @@ class User < ApplicationRecord
       'user.svg'
     end
   end
+
+  has_one :address
 end

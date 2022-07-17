@@ -9,13 +9,15 @@ Rails.application.routes.draw do
 
   resources :movies, except: :show
 
-  get 'media/movies/:id/:title', to: 'movies#show', as: 'media_movie'
-  get 'catalog/:id/:catalog_name', to: 'movies#movies_catalog', as: 'movie_catalog'
+  get   'media/movies/:id/:title',    to: 'movies#show',            as: 'media_movie'
+  get   'catalog/:id/:catalog_name',  to: 'movies#movies_catalog',  as: 'movie_catalog'
 
-  get 'accounts/register'
-  get 'accounts/change_password'
-  get 'accounts/favorites'
+  get   'accounts/change_password',   to: 'users#edit'
 
-  patch 'profile_name', to: 'users#update_name'
-  patch 'profile_password', to: 'users#update_password'
+  get   'accounts/register',          to: 'adresses#new',           as: 'new_adress'
+  patch 'accounts/register',          to: 'adrzesses#edit',         as: 'edit_adress'
+  post  'accounts/register',          to: 'adresses#create'
+
+  patch 'profile_name',               to: 'users#update_name'
+  patch 'profile_password',           to: 'users#update_password'
 end
