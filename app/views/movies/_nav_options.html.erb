@@ -1,22 +1,38 @@
 <div class="nav-options">
+  <% if user_signed_in? %>
+    <div class="content-options desable-options-desk">
+      <ul class="menu-user">
+        <li class="hover-list">
+          <%= link_to accounts_register_path do %>
+            <%= image_tag(current_user.avatar_thumbnail, alt: "user", class: "user_avatar") %>
+            <span>Minha Conta</span>
+          <% end %>
+        </li>
+        <li class="hover-list">
+          <a href="">
+            <%= image_tag('heart.svg', alt: "heart") %>
+            <span>Favoritos</span>
+          </a>
+        </li>
+        <li class="hover-list">
+          <%= link_to destroy_user_session_path do %>
+            <%= image_tag('logout.svg', alt: "logout") %>
+            <span>Sair</span>
+          <% end %>
+        </li>
+      </ul>
+    </div>
+  <% end %>
   <div class="content-options">
     <h2>Gênero</h2>
     <ul class="menu-options">
-      <li class="hover-list">
-        <a href="">
-          <span>Ação</span>
-        </a>
-      </li>
-      <li class="hover-list">
-        <a href="">
-          <span>Aventura</span>
-        </a>
-      </li>
-      <li class="hover-list">
-        <a href="">
-          <span>Clássicos</span>
-        </a>
-      </li>
+      <% @categories.each do |category| %>
+        <li class="hover-list">
+          <%= link_to do %>
+            <span><%= category.category %></span>
+          <% end %>
+        </li>
+      <% end %>
     </ul>
   </div>
 
@@ -40,4 +56,42 @@
       </li>
     </ul>
   </div>
+</div>
+
+<div class="nav-options-mobile">
+  <div class="content-options">
+    <div class="nav-exit"></div>
+
+    <h2>Gêneros</h2>
+    <ul class="menu-options">
+      <li class="hover-list">
+        <a href="">
+          <span>Ação</span>
+        </a>
+      </li>
+      <li class="hover-list">
+        <a href="">
+          <span>Aventura</span>
+        </a>
+      </li>
+      <li class="hover-list">
+        <a href="">
+          <span>Clássicos</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="nav-search-mobile">
+  <div class="nav-exit"></div>
+
+  <div class="search-mobile">
+    <input type="text" class="input" placeholder="Filmes, séries, shows...">
+    <div class="btn-mobile">
+      <%= image_tag('search.svg', alt: 'search') %>
+    </div>
+  </div>
+  
+  <button type="button">Buscar</button>
 </div>
