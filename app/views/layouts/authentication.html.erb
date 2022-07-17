@@ -13,7 +13,7 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
+  <body data-flash-messages="<%= JSON.dump(flash.to_a) %>">
     <main class="login-main">
       <div class="container-login">
         <%= yield %>
