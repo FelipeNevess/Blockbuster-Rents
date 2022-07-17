@@ -1,2 +1,29 @@
 pt-BR:
-  hello: "Olá"
+  activerecord:
+    models:
+      movie: 'Filme'
+      category: 'Categoria'
+      director: 'Diretores'
+      actor: 'Atores'
+
+    attributes:
+      default: &default
+        created_at: 'Criando em'
+        updated_at: 'Atualizado em'
+
+      movie:
+        <<: *default
+        title: 'Título'
+        title_producer: 'Nome da produtora'
+        release_year: 'Ano de lançamento'
+        description: 'Descrição'
+        background_image: 'Imagem de fundo'
+        background_video: 'Vídeo de fundo'
+        card_image: 'Cartão de filme'
+      category:
+        category: 'Categoria'
+      actor:
+        name: 'Nome'
+      director:
+        name: 'Nome'
+      
