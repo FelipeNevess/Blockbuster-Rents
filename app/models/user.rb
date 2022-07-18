@@ -5,10 +5,14 @@ class User < ApplicationRecord
                    :rememberable,
                    :validatable
 
-  validates        :name, presence: true
+  validates        :name,   presence: true
+  validates        :avatar, content_type: %i[png jpg jpeg]
 
   has_one_attached :avatar
-  validates        :avatar, content_type: %i[png jpg jpeg]
+
+  has_many         :favorites
+
+  has_one          :address
 
   def avatar_thumbnail
     if avatar.attached?
@@ -17,6 +21,4 @@ class User < ApplicationRecord
       'user.svg'
     end
   end
-
-  has_one :address
 end
