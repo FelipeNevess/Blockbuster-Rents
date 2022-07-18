@@ -1,0 +1,35 @@
+<main class="main-user">
+  <header class="user-header">
+    <h1 class="df df_alc fw_bigue">Minha conta</h1>
+  </header>
+  <div class="content-form-user df">
+    <%= render 'aside/nav_content' %>
+    
+    <div class="content-form">
+      <section class="section-registration">
+        <header>
+          <h2 class="form-title">Favoritos</h2>
+        </header>
+
+        <div class="content-favorites">
+          <ul>
+            <% @favorites.each do |movie| %>
+              <li>
+                <%= link_to media_movie_path(movie.id, movie.title) do %>
+                  <%= image_tag(movie.card_image, alt: movie.title) %>
+                  <div class="play">
+                    <div></div>
+                  </div>
+                <% end %>
+                <div class="content-description">
+                  <h2><%= movie.title %></h2>
+                  <p><%= movie.description %></p>
+                </div>
+              </li>
+            <% end %>
+          </ul>
+        </div>
+      </section>
+    </div>
+  </div>
+</main>

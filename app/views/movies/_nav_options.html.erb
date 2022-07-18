@@ -9,10 +9,10 @@
           <% end %>
         </li>
         <li class="hover-list">
-          <a href="">
+          <%= link_to favorite_path do %>
             <%= image_tag('heart.svg', alt: "heart") %>
             <span>Favoritos</span>
-          </a>
+          <% end %>
         </li>
         <li class="hover-list">
           <%= link_to destroy_user_session_path do %>

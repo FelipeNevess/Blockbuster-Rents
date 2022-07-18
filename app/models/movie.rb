@@ -20,5 +20,7 @@ class Movie < ApplicationRecord
   has_many :movie_directors
   has_many :directors, through: :movie_directors
 
+  has_many :favorites, dependent: :destroy
+
   pg_search_scope :search_by_title, against: :title
 end
