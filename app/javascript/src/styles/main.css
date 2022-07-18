@@ -13,6 +13,7 @@
 @import './footer.css';
 @import './movie_card.css';
 @import './mobile_header.css';
+@import './favorite.css';
 
 body {
   background-color: #16041b;
