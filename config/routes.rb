@@ -7,7 +7,9 @@ Rails.application.routes.draw do
     sign_up: ''
   }
 
-  resources :movies, except: :show
+  resources :movies, except: :show do
+    get :search, on: :collection
+  end
 
   get   'media/movies/:id/:title',    to: 'movies#show',            as: 'media_movie'
   get   'catalog/:id/:catalog_name',  to: 'movies#movies_catalog',  as: 'movie_catalog'
