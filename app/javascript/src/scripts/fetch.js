@@ -1,4 +1,4 @@
-document.addEventListener('turbolinks:load', () => {
+window.addEventListener('turbolinks:load', () => {
   const buttonSubmit = document.querySelector('.search-cep');
 
   let myInit = {

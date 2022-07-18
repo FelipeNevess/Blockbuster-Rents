@@ -1,6 +1,6 @@
 import Toastify from "toastify-js";
 
-document.addEventListener('DOMContentLoaded', () => {
+window.addEventListener('DOMContentLoaded', () => {
   const messages = document.body.dataset.flashMessages
 
   const backgroundColors = {

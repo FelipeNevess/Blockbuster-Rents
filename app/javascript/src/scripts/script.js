@@ -1,4 +1,4 @@
-document.addEventListener('turbolinks:load', () => {
+window.addEventListener('turbolinks:load', () => {
   const body = document.body;
 
   const buttonActiveSearch = document.querySelector('.btn-search');

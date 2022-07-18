@@ -1,4 +1,4 @@
-document.addEventListener('turbolinks:load', () => {
+window.addEventListener('turbolinks:load', () => {
   const buttonPlay = document.querySelector('.play-start-movie');
   const buttonAudio = document.querySelector('.button-audio');
   const buttonDisplay = document.querySelector('.display-details');
