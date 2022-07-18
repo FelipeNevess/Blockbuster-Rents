@@ -1,0 +1,13 @@
+<div>
+    <ul>
+      <% @movies.each do |movie| %>
+        <li>
+          <div>
+            <%= link_to media_movie_path(movie.id, movie.title) do %>
+              <%= image_tag(movie.card_image) %>
+            <% end %>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+</div>

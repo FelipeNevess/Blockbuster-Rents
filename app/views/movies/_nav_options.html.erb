@@ -87,11 +87,13 @@
   <div class="nav-exit"></div>
 
   <div class="search-mobile">
-    <input type="text" class="input" placeholder="Filmes, séries, shows...">
+    <%= form_with url: search_movies_path, method: :get, local: true, class: 'search-form-mobile' do |f| %>
+      <%= f.text_field :q, class: "input", required: true, placeholder: "Filmes, séries, shows..." %>
+      <%= f.button "Buscar", type: "submit" %>
+    <% end %>
     <div class="btn-mobile">
-      <%= image_tag('search.svg', alt: 'search') %>
+      <%= image_tag('search.svg', alt: 'search', class: 'magnifying-glass') %>
     </div>
   </div>
   
-  <button type="button">Buscar</button>
 </div>

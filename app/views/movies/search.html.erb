@@ -1,0 +1,11 @@
+<main class="main-movies">
+  <header class="header-search-movie">
+    <h1>
+      <%= @movies.empty? ? 'Nenhum resultado encontrado (╥_╥)' :
+        pluralize(@movies.count, "resultado encontrado")
+      %>
+    </h1>
+  </header>
+
+  <%= render 'lis', model: @movies %>
+</main>
