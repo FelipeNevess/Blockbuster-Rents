@@ -20,7 +20,7 @@ class AdressesController < ApplicationController
     redirect_to new_adress_path, notice: 'Endereço atualizado com sucesso.' if @address.update(address_params)
   end
 
-  def create_address
+  def create_address?
     @address = Address.new(address_params.merge(user: current_user))
 
     if @address.save
