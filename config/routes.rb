@@ -7,15 +7,16 @@ Rails.application.routes.draw do
     sign_up: ''
   }
 
-  resources :movies, except: :show do
+  resources :movies, except: %i[show favorite] do
     get :search, on: :collection
   end
 
   get   'media/movies/:id/:title',    to: 'movies#show',            as: 'media_movie'
   get   'catalog/:id/:catalog_name',  to: 'movies#movies_catalog',  as: 'movie_catalog'
+  get   'favorites',                  to: 'favorites#index',        as: 'favorite'
 
   get   'accounts/register',          to: 'adresses#new',           as: 'new_adress'
-  patch 'accounts/register',          to: 'adrzesses#edit',         as: 'edit_adress'
+  patch 'accounts/register',          to: 'adresses#edit',          as: 'edit_adress'
   post  'accounts/register',          to: 'adresses#create'
 
   # Não definitivas
