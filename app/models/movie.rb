@@ -1,4 +1,6 @@
 class Movie < ApplicationRecord
+  include PgSearch::Model
+
   validates :title,
             :title_producer,
             :release_year,
@@ -17,4 +19,6 @@ class Movie < ApplicationRecord
 
   has_many :movie_directors
   has_many :directors, through: :movie_directors
+
+  pg_search_scope :search_by_title, against: :title
 end
