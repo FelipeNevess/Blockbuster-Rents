@@ -10,6 +10,10 @@ class MoviesController < ApplicationController
     @first_movie = Movie.first(7)
   end
 
+  def search
+    @movies = Movie.search_by_title(search_params[:q])
+  end
+
   def movies_catalog; end
 
   def show; end
@@ -53,8 +57,20 @@ class MoviesController < ApplicationController
     render file: "#{Rails.root}/public/404.html"
   end
 
+  def search_params
+    params.permit(:q)
+  end
+
   def movie_params
-    params.require(:movie).permit(:title, :title_producer, :release_year, :categories, :description, :actors, :directors,
-                                  :background_image, :background_video, :card_image)
+    params.require(:movie).permit(:title,
+                                  :title_producer,
+                                  :release_year,
+                                  :categories,
+                                  :description,
+                                  :actors,
+                                  :directors,
+                                  :background_image,
+                                  :background_video,
+                                  :card_image)
   end
 end
