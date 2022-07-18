@@ -2,7 +2,7 @@
   <header class="header-search-movie">
     <h1>
       <%= @movies.empty? ? 'Nenhum resultado encontrado (╥_╥)' :
-        pluralize(@movies.count, "resultado encontrado")
+        "Busca por '#{params[:q]}': #{pluralize(@movies.count, "resultado encontrado")}"
       %>
     </h1>
   </header>
