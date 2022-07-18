@@ -27,28 +27,30 @@
   padding: 6px 11px;
 }
 
-.nav > div > button {
+.nav div button {
   background-color: var(--primary-color);
   width: 50px;
   height: 50px;
 }
 
-.nav > div > a {
+.nav div a {
   text-decoration: none;
 }
 
-.nav > div > a > h1 {
+.nav div a h1 {
   font-family: 'Poppins', sans-serif;
   font-size: 32px;
   padding: 0 18px;
   color: var(--white-color);
 }
 
-.nav > div > button img {
+.nav div button img,
+.btn-search img {
   padding: 12px;
 }
 
-.nav > div > button img:hover {
+.nav div button img:hover
+.btn-search img:hover {
   cursor: pointer;
 }
 
@@ -94,6 +96,14 @@
   transition: width 0.3s ease;
 }
 
+.search-form {
+  flex-direction: row !important;
+}
+
+.search-form-mobile {
+  display: block !important;
+}
+
 .btn-search {
   background-color: var(--white-color);
   border: 0;
@@ -112,6 +122,15 @@
   border-radius: 17px 0 0 17px;
 }
 
+.btn-mobile {
+  border: none !important;
+}
+
+.magnifying-glass {
+  border-bottom: 1px solid #7c7c7c;
+  width: 35px !important;
+}
+
 @media (max-width: 551px) {
   header {
     padding: 0;
@@ -123,5 +142,10 @@
 
   .desable-menu {
     display: none !important;
+  }
+
+  .nav-search-mobile button {
+    width: 100% !important;
+    margin-left: 0 !important;
   }
 }

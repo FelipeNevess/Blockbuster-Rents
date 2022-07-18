@@ -272,6 +272,7 @@ button:hover, .fw_light {
   .content-form {
     padding-left: 0;
     min-width: var(--width-full);
+    margin-top: 27px;
   }
 
   .cep {

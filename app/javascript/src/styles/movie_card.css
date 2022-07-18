@@ -47,3 +47,14 @@
   transform: scale(1.08) !important;
   box-shadow: 8px 3px 20px 0px rgb(0 0 0 / 40%);
 }
+
+.header-search-movie {
+  width: 100% !important;
+  min-width: 187px;
+  padding-left: 0 !important;
+  margin-bottom: 2.6rem !important;
+}
+
+.header-search-movie h1 {
+  text-align: center !important;
+}
