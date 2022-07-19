@@ -3,7 +3,6 @@
   position: relative;
   overflow: hidden;
   color: #fafafa;
-  /* min-height: 100vh; */
 }
 
 .video-play-container {
@@ -29,7 +28,6 @@
   align-items: center;
   overflow: hidden;
   max-height: 92.4vh;
-  /* max-height: 99.4vh; */
 }
 
 .movie-config,
@@ -162,7 +160,6 @@
 }
 
 .description-movie {
-  /* max-width: 35rem; */
   margin: 1.5rem 0;
 }
 
@@ -283,6 +280,14 @@
   cursor: pointer;
 }
 
+.like, .deslike {
+  background-color: transparent;
+}
+
+.hidden {
+  display: none;
+}
+
 @media (max-width: 550px) {
   .movie-infos div {
     padding: 0 5px;
@@ -293,7 +298,6 @@
   }
 
   .video {
-    /* display: none; */
     transform: translateX(0) !important;
     min-height: 100%;
     margin-top: .6rem;
@@ -319,40 +323,9 @@
     display: none;
   }
 
-  /* .play {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    position: absolute;
-    cursor: pointer;
-    transition: opacity .2s;
-    margin-top: 12px;
-    z-index: 2;
-    display: none;
-  }
-  
-  .play div {
-    border-top: 2rem solid transparent;
-    border-left: 3rem solid #fff;
-    border-bottom: 2rem solid transparent;
-    width: 0;
-  }
-
-  .play.start {
-    display: none;
-  } */
-
   .mobile-video-play {
     justify-content: flex-end;
     flex-direction: column;
   }
   
 }
-
-/* @media (max-width: 380px) {
-  .play div {
-    border-top: 1rem solid transparent;
-    border-left: 1.5rem solid #fff;
-    border-bottom: 1rem solid transparent;
-  }
-} */
