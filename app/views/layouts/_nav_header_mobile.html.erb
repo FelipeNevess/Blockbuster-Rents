@@ -26,8 +26,8 @@
   <% if user_signed_in? %>
     <li>
       <div>
-        <%= link_to favorite_path do %>
-          <%= image_tag("heart.svg", alt: "heart") %>
+        <%= link_to favorites_path do %>
+          <%= image_tag("like.svg", alt: "heart") %>
           <span>Favoritos</span>
         <% end %>
       </div>
