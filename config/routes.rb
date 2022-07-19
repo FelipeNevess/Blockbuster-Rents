@@ -11,9 +11,10 @@ Rails.application.routes.draw do
     get :search, on: :collection
   end
 
+  resources :favorites, only: %i[index create destroy]
+
   get   'media/movies/:id/:title',    to: 'movies#show',            as: 'media_movie'
   get   'catalog/:id/:catalog_name',  to: 'movies#movies_catalog',  as: 'movie_catalog'
-  get   'favorites',                  to: 'favorites#index',        as: 'favorite'
 
   get   'accounts/register',          to: 'adresses#new',           as: 'new_adress'
   patch 'accounts/register',          to: 'adresses#edit',          as: 'edit_adress'
