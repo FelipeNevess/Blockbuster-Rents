@@ -6,9 +6,9 @@
           <source src="<%= @movie.background_video %>" type="video/mp4">
         </video>
 
-        <div class="play">
+        <%# <div class="play">
           <div></div>
-        </div>
+        </div> %>
         
         <%= image_tag(@movie.background_image, class: "movie-image movie-image-mobile", alt: @movie.title)%>
       </div>
@@ -41,16 +41,26 @@
           <p>88 minutos</p>
         </div>
 
-        <div class="validation-movie">
+        <%# <div class="validation-movie">
           <span>x</span>
           <span>x</span>
           <span>x</span>
           <span>x</span>
           <span>x</span>
-        </div>
+        </div> %>
 
-        <div class="favorite-movie">
-          <%= image_tag('heart.svg', alt: 'heart') %>
+        <div
+          class="favorite-movie"
+          data-movie-id="<%= @movie.id %>"
+          data-favorite-id="<%= @movie.favorites.find_by(user_id: current_user.id)&.id %>"
+        >
+          <button type="button" class="like <%= @movie.liked_by?(current_user.id) ? 'hidden' : '' %>">
+            <%= image_tag 'like.svg', alt: 'like' %>
+          </button>
+
+          <button type="button" class="deslike <%= @movie.liked_by?(current_user.id) ? '' : 'hidden' %>">
+            <%= image_tag 'liked.svg', alt: 'liked' %>
+          </button>
           <span>(Adicionar aos favoritos)</span>
         </div>
 
