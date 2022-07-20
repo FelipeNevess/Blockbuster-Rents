@@ -26,4 +26,10 @@ pt-BR:
         name: 'Nome'
       director:
         name: 'Nome'
+      address:
+        number: 'Numero'
+        zip_code: 'CEP'
+        city: 'Cidade'
+        state: 'Estado'
+        street: 'Rua'
       
