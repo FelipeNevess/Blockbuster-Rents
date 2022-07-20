@@ -106,11 +106,34 @@
           </ul>
         </div>
 
-        <div class="button-add-movie">
-          <div>
-            <button type="button">ALUGAR AGORA</button>
+        <% unless user_signed_in? %>
+          <div class="button-add-movie">
+            <div>
+              <%= link_to new_user_session_path do %> 
+                <button type="button" class="to-hire">ALUGAR AGORA</button>
+              <% end %>
+            </div>
           </div>
-        </div>
+        <% else %>
+          <div
+            class="button-add-movie"
+            data-rent-movie-id="<%= @movie.id %>"
+            data-rent-id="<%= @movie.rents.find_by(user_id: current_user.id)&.id %>"
+          >
+            <div>
+              <button type="button" class="to-hire" <%= 'disabled' if current_user.rents.count == 3 %>>
+                <% if @movie.rent_by?(current_user.id) %>
+                  Entregar em 3 dias
+                  <span class="date-time-rent">
+                    (<%= time_ago_in_words(@movie.rent_by_date?(current_user.id, @movie.id)) %>)
+                  </span>
+                <% else %>
+                  <%= current_user.rents.count < 3 ? 'ALUGAR AGORA' : 'Limite de aluguéis foi alcançado' %>
+                <% end %>
+              </button>
+            </div>
+          </div>
+        <% end %>
       </div>
     </div>
   </div>
