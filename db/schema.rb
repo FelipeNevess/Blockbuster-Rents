@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_07_18_213657) do
+ActiveRecord::Schema.define(version: 2022_07_19_005231) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -122,6 +122,17 @@ ActiveRecord::Schema.define(version: 2022_07_18_213657) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "rents", force: :cascade do |t|
+    t.float "rent_value", default: 4.5
+    t.date "rental_date", default: "2022-07-19"
+    t.bigint "movie_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["movie_id"], name: "index_rents_on_movie_id"
+    t.index ["user_id"], name: "index_rents_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "name", default: "", null: false
     t.string "email", default: "", null: false
@@ -146,4 +157,6 @@ ActiveRecord::Schema.define(version: 2022_07_18_213657) do
   add_foreign_key "movie_categories", "movies"
   add_foreign_key "movie_directors", "directors"
   add_foreign_key "movie_directors", "movies"
+  add_foreign_key "rents", "movies"
+  add_foreign_key "rents", "users"
 end
