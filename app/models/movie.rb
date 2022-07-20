@@ -25,7 +25,10 @@ class Movie < ApplicationRecord
 
   has_many :favorites, dependent: :destroy
 
-  pg_search_scope :search_by_title, against: :title
+  pg_search_scope :search, against: :title, associated_against: {
+    actors: :name,
+    directors: :name
+  }
 
   def liked_by?(user)
     favorites.where(user_id: user).exists?

@@ -11,7 +11,7 @@ class MoviesController < ApplicationController
   end
 
   def search
-    @movies = Movie.search_by_title(search_params[:q])
+    @movies = Movie.search(search_params[:q])
   end
 
   def movies_catalog; end

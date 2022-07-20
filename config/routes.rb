@@ -11,6 +11,8 @@ Rails.application.routes.draw do
     get :search, on: :collection
   end
 
+  get 'movies/search/:q', to: 'movies#search', as: 'movies_search_name'
+
   resources :favorites, only: %i[index create destroy]
   resources :rents, only: %i[create destroy]
 

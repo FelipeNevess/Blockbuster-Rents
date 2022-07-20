@@ -92,7 +92,11 @@
           <h3>Atores</h3>
           <ul>
             <% @movie.actors.each do |actor| %>
-              <li><%= actor.name %></li>
+              <li>
+                <%= link_to movies_search_name_path(actor.name) do %>
+                  <%= actor.name %>
+                <% end %>
+              </li>
             <% end %>
           </ul>
         </div>
@@ -101,7 +105,11 @@
           <h3>Diretores</h3>
           <ul>
             <% @movie.directors.each do |director| %>
-              <li><%= director.name %></li>
+              <li>
+                <%= link_to movies_search_name_path(director.name) do %>
+                  <%= director.name %>
+                <% end %>
+              </li>
             <% end %>
           </ul>
         </div>
@@ -142,7 +150,7 @@
 
 <section class="swiper-cards">
   <div class="swiper mySwiperCard">
-    <a href="">
+    <a>
       <header>
         <h2>Você também pode gostar</h2>
       </header>
