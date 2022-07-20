@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   end
 
   resources :favorites, only: %i[index create destroy]
+  resources :rents, only: %i[create destroy]
 
   get   'media/movies/:id/:title',    to: 'movies#show',            as: 'media_movie'
   get   'catalog/:id/:catalog_name',  to: 'movies#movies_catalog',  as: 'movie_catalog'
