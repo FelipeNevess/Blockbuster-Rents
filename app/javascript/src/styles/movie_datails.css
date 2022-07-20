@@ -190,6 +190,15 @@
   font-size: .8rem;
 }
 
+.actors-movie ul li a, .directors-movie ul li a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.actors-movie ul li a:hover, .directors-movie ul li a:hover {
+  border-bottom: 1px solid;
+}
+
 .actors-movie ul li::after, .directors-movie ul li::after {
   content: " | ";
   margin-right: 6px;
