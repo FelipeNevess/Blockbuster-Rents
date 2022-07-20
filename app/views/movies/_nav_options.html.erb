@@ -28,7 +28,7 @@
     <ul class="menu-options">
       <% @categories.each do |category| %>
         <li class="hover-list">
-          <%= link_to do %>
+          <%= link_to movie_catalog_path(category.id, category.category) do %>
             <span><%= category.category %></span>
           <% end %>
         </li>
@@ -40,17 +40,17 @@
     <h2>Populares</h2>
     <ul class="menu-options">
       <li class="hover-list">
-        <a href="">
+        <a>
           <span>Novidades</span>
         </a>
       </li>
       <li class="hover-list">
-        <a href="">
+        <a>
           <span>Top 10</span>
         </a>
       </li>
       <li class="hover-list">
-        <a href="">
+        <a>
           <span>Recomendados</span>
         </a>
       </li>
