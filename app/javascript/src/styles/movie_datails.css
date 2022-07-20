@@ -327,5 +327,9 @@
     justify-content: flex-end;
     flex-direction: column;
   }
+
+  .button-add-movie {
+    margin: 1.2rem 0 0;
+  }
   
 }
