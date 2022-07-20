@@ -20,11 +20,22 @@ class Movie < ApplicationRecord
   has_many :movie_directors
   has_many :directors, through: :movie_directors
 
+  has_many :rents
+  has_many :users, through: :rents
+
   has_many :favorites, dependent: :destroy
 
   pg_search_scope :search_by_title, against: :title
 
   def liked_by?(user)
     favorites.where(user_id: user).exists?
+  end
+
+  def rent_by?(user)
+    rents.where(user_id: user).exists?
+  end
+
+  def rent_by_date?(user, movie)
+    rents.where(movie_id: movie, user_id: user)[0][:created_at]
   end
 end

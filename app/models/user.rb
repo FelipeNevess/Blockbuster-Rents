@@ -14,6 +14,9 @@ class User < ApplicationRecord
 
   has_one          :address
 
+  has_many :rents
+  has_many :movies, through: :rents
+
   def avatar_thumbnail
     if avatar.attached?
       avatar.variant(resize: '50x50^', extent: '50x50')
