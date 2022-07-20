@@ -8,23 +8,30 @@ class AdressesController < ApplicationController
   end
 
   def create
-    create_address? if current_user.address.nil?
+    if current_user.address.nil?
+      create_address
+    else
+      edit
+    end
+  end
 
-    update_address
+  def edit
+    @address = Address.find(current_user.address.id)
+    if @address.update(address_params)
+      redirect_to new_adress_path, notice: 'Endereço atualizado com sucesso.'
+    else
+      flash.now[:alert] = @address.errors.full_messages.to_sentence
+      render :new
+    end
   end
 
   private
 
-  def update_address
-    @address = Address.find(current_user.address.id)
-    redirect_to new_adress_path, notice: 'Endereço atualizado com sucesso.' if @address.update(address_params)
-  end
-
-  def create_address?
+  def create_address
     @address = Address.new(address_params.merge(user: current_user))
 
     if @address.save
-      redirect_to new_adress_path, notice: 'Endereço criado com sucesso.'
+      render :new, notice: 'Endereço criado com sucesso.'
     else
       flash.now[:alert] = @address.errors.full_messages.to_sentence
       render :new
