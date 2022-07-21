@@ -22,9 +22,6 @@ class MoviesController < ApplicationController
 
   def set_movie
     @movie = Movie.find(params[:id])
-  rescue ActiveRecord::RecordNotFound
-    @movie = nil
-    render file: "#{Rails.root}/public/404.html"
   end
 
   def search_params
