@@ -94,6 +94,7 @@
   padding: 0;
   width: 0;
   transition: width 0.3s ease;
+  border-radius: 17px 0 0 17px;
 }
 
 .search-form {
@@ -119,7 +120,6 @@
 .search.active .input {
   width: 224px;
   padding: 15px;
-  border-radius: 17px 0 0 17px;
 }
 
 .btn-mobile {
