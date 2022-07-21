@@ -293,11 +293,12 @@ button:hover, .fw_light {
     font-size: .9rem;
     margin: 0 auto;
     text-align: center;
+    justify-content: center;
   }
 
   .sidebar a:nth-child(1) {
     background: transparent;
-    border: 0.1rem solid #66127d;
+    /* border: 0.1rem solid #66127d; */
   }
 
   .selected {

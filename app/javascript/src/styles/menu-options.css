@@ -84,13 +84,14 @@
 }
 
 .nav-search-mobile button {
-  margin: 23px;
+  margin: 23px 0 14rem;
   padding: 14px;
   width: 50%;
   border-radius: 20px;
+  position: relative;
   background-color: #66127d;
   color: #fff;
-  margin-bottom: 14rem;
+  left: 13px;
   cursor: pointer;
 }
 
