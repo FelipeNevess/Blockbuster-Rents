@@ -64,21 +64,13 @@
 
     <h2>Gêneros</h2>
     <ul class="menu-options">
-      <li class="hover-list">
-        <a href="">
-          <span>Ação</span>
-        </a>
-      </li>
-      <li class="hover-list">
-        <a href="">
-          <span>Aventura</span>
-        </a>
-      </li>
-      <li class="hover-list">
-        <a href="">
-          <span>Clássicos</span>
-        </a>
-      </li>
+      <% @categories.each do |category| %>
+        <li class="hover-list">
+          <%= link_to movie_catalog_path(category.id, category.category) do %>
+            <span><%= category.category %></span>
+          <% end %>
+        </li>
+      <% end %>
     </ul>
   </div>
 </div>
@@ -95,5 +87,4 @@
       <%= image_tag('search.svg', alt: 'search', class: 'magnifying-glass') %>
     </div>
   </div>
-  
 </div>
