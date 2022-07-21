@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     sign_up: ''
   }
 
-  resources :movies, except: %i[show favorite] do
+  resources :movies, only: %i[index search movies_catalog show] do
     get :search, on: :collection
   end
 
