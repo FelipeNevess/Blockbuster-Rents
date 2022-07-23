@@ -29,7 +29,7 @@
       <% @categories.each do |category| %>
         <li class="hover-list">
           <%= link_to movie_catalog_path(category.id, category.category) do %>
-            <span><%= category.category %></span>
+            <span><%= category.category_by(category.category) %></span>
           <% end %>
         </li>
       <% end %>
@@ -39,21 +39,13 @@
   <div class="content-options">
     <h2>Populares</h2>
     <ul class="menu-options">
-      <li class="hover-list">
-        <a>
-          <span>Novidades</span>
-        </a>
-      </li>
-      <li class="hover-list">
-        <a>
-          <span>Top 10</span>
-        </a>
-      </li>
-      <li class="hover-list">
-        <a>
-          <span>Recomendados</span>
-        </a>
-      </li>
+      <% @popularity.each do |p| %>
+        <li class="hover-list">
+          <%= link_to movie_catalog_path(p.id, p.category_by(p.category)) do %>
+            <span><%= p.category_by(p.category) %></span>
+          <% end %>
+        </li>
+      <% end %>
     </ul>
   </div>
 </div>
