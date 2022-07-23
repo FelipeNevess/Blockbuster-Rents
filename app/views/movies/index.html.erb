@@ -1,8 +1,8 @@
 <section class="swiper mySwiperCarousel">
   <div class="swiper-wrapper">
     <% @first_movie.each do |movie| %>
-      <%= link_to '', class: "swiper-slide" do %>
-        <%= image_tag(movie.background_image, alt: movie.title) %>
+      <%= link_to media_movie_path(movie.id, movie.title), class: "swiper-slide" do %>
+        <%= image_tag(movie.slide, alt: movie.title) %>
       <% end %>
     <% end %>
   </div>
