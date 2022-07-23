@@ -1,3 +1,5 @@
+# Populando o banco
+
 all_categories = JSON.parse(File.read(Rails.root.join('db/categories.json')))
 
 all_categories.each do |category|
@@ -21,12 +23,13 @@ all_movies = JSON.parse(File.read(Rails.root.join('db/movies.json')))
 all_movies.each do |movie|
   Movie.create(
     title: movie['title'],
-    title_producer: movie['title_producer'],
+    title_producer: movie['title_producer'][1],
     release_year: movie['release_year'],
     description: movie['description'],
     background_image: movie['background_image'],
     background_video: movie['background_video'],
-    card_image: movie['card_image']
+    card_image: movie['card_image'],
+    slide: movie['slide']
   )
 end
 
