@@ -58,16 +58,21 @@ bundle install ou bundle
 
 ## Iniciar aplicação
 
-```rails
-
+```
 # Criar o banco
 --> rails db:create
-
+```
+```
 # Adicionar as 'migrations'
 --> rails db:migrate
-
+```
+```
 # Popular o banco
 --> rails db:seed
+```
+```
+# Inciar o servidor
+--> rails s
 ```
 
 ![](./image-1.PNG)
