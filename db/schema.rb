@@ -125,7 +125,7 @@ ActiveRecord::Schema.define(version: 2022_07_23_000158) do
 
   create_table "rents", force: :cascade do |t|
     t.float "rent_value", default: 4.5
-    t.date "rental_date", default: "2022-07-22"
+    t.date "rental_date", default: "2022-07-23"
     t.bigint "movie_id", null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false

@@ -11,7 +11,7 @@ gem 'image_processing', '>= 1.2'
 gem 'jbuilder', '~> 2.7'
 gem 'mini_magick', '>= 4.9.5'
 gem 'net-smtp'
-gem 'pg', '~> 1.1', group: :production
+gem 'pg', '~> 1.1'
 gem 'pg_search'
 gem 'puma', '~> 5.0'
 gem 'rails', '~> 6.1.6'

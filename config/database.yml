@@ -3,20 +3,14 @@ default: &default
   encoding: unicode
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   timeout: 5000
-  username: Locadora
-  password: password
 
 development:
   <<: *default
   database: Locadora_development
-  username: Locadora
-  password: password
 
 test:
   <<: *default
   database: Locadora_test
-  username: Locadora
-  password: password
 
 production:
   <<: *default
