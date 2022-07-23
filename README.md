@@ -70,7 +70,7 @@ bundle install ou bundle
 ```
 --> rails db:seed
 ```
-##### Inciar o servidor
+##### Iniciar o servidor
 ```
 --> rails s
 ```
