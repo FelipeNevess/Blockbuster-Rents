@@ -32,7 +32,7 @@ Criei um programa em python para fazer raspagem de dados de um certo site, todo 
 - Aprendi como funciona as configurações de tradução e pluralização
 - Aprendi algumas palavras chaves para criação/edição/remoção/relacionamento de 'migrations'
 - Reforcei meu entendimento do uso de rotas
-- Um melhor uso do JavasCript no Rails
+- Aprendi como funciona o uso do JavasCript no Rails
 - E adquiri um melhor conhecimento no uso de algumas gems que estão no projeto
 
 
