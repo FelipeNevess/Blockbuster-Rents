@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_07_19_005231) do
+ActiveRecord::Schema.define(version: 2022_07_23_000158) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -120,11 +120,12 @@ ActiveRecord::Schema.define(version: 2022_07_19_005231) do
     t.string "card_image"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "slide"
   end
 
   create_table "rents", force: :cascade do |t|
     t.float "rent_value", default: 4.5
-    t.date "rental_date", default: "2022-07-19"
+    t.date "rental_date", default: "2022-07-22"
     t.bigint "movie_id", null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
