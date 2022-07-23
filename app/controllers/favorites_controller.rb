@@ -2,6 +2,7 @@ class FavoritesController < ApplicationController
   include OptionsCategories
 
   before_action :set_movie_category
+  before_action :set_movie_popular
   before_action :set_favorites, only: :destroy
 
   def index

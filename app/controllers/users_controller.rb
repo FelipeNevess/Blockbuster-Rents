@@ -2,6 +2,7 @@ class UsersController < ApplicationController
   include OptionsCategories
 
   before_action :set_movie_category
+  before_action :set_movie_popular
 
   def edit; end
 
