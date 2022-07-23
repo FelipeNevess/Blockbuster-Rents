@@ -58,20 +58,20 @@ bundle install ou bundle
 
 ## Iniciar aplicação
 
+##### Criar o banco
 ```
-# Criar o banco
 --> rails db:create
 ```
+##### Adicionar as 'migrations'
 ```
-# Adicionar as 'migrations'
 --> rails db:migrate
 ```
+##### Popular o banco
 ```
-# Popular o banco
 --> rails db:seed
 ```
+##### Inciar o servidor
 ```
-# Inciar o servidor
 --> rails s
 ```
 
