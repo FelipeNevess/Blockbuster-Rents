@@ -14,6 +14,6 @@ test:
 
 production:
   <<: *default
-  database: Locadora_production
-  username: Locadora
-  password: <%= ENV['LOCADORA_DATABASE_PASSWORD'] %>
+  database: <%= ENV['DATABASE_URL'] %>
+  # username: Locadora
+  # password: <%= ENV['LOCADORA_DATABASE_PASSWORD'] %>
