@@ -35,45 +35,36 @@ Criei um programa em python para fazer raspagem de dados de um certo site, todo 
 - Aprendi como funciona o uso do JavasCript no Rails
 - E adquiri um melhor conhecimento no uso de algumas gems que estão no projeto
 
-
-## Instalação
-Se não tem o ruby instalado em sua maquina
-
-```
-https://www.ruby-lang.org/pt/documentation/installation/
-
-## Em seguida instale o Rails
-
-https://www.tutorialspoint.com/ruby-on-rails/rails-installation.htm
-```
-
-#### Hora de iniciar o projeto
-
-Use o [bundle](https://bundler.io/guides/rails.html) o gerenciador de pacotes para instalar as dependências do projeto.
-
-
-```bash
-bundle install ou bundle
-```
-
 ## Iniciar aplicação
 
-##### Criar o banco
+##### Se ainda não tem o docker e docker-compose instalado, click [aqui](https://docs.docker.com/engine/install/ubuntu/) para ver o passo a passo
+
+### Hora de iniciar
+
+#### ⚠️ Atenção: os comandos a seguir pode demorar um pouco para ser finalizados, então tenha paciência :)
+
+##### Primeiro, compile as imagens de contêiner e crie os serviços, executando o docker-compose up com a flag -d, que executará os contêineres em segundo plano:
 ```
---> rails db:create
+docker-compose up -d
 ```
-##### Adicionar as 'migrations'
+
+##### Você também pode obter informações mais detalhadas sobre os processos de inicialização nos logs do contêiner
+
 ```
---> rails db:migrate
+docker-compose logs
 ```
-##### Popular o banco
+
+##### Você também pode verificar o status dos seus contêineres com o docker-compose ps:
 ```
---> rails db:seed
+docker-compose ps
 ```
-##### Iniciar o servidor
+
+##### Em seguida, rode o seguinte comando para criar o banco de dados e criar as tabelas do banco (migrations)
 ```
---> rails s
+docker-compose exec app bundle exec rake db:setup db:migrate
 ```
+
+⚠️  Pode ser que o comando ```docker-compose exec app bundle exec rake db:setup db:migrate``` também popula o banco de dados, caso não esteja populando execute ```docker-compose exec app bundle exec rake db:seed```
 
 ![](./image-1.PNG)
 ![alt text](./image-2.PNG)
