@@ -37,13 +37,23 @@ Criei um programa em python para fazer raspagem de dados de um certo site, todo 
 
 ## Iniciar aplicação
 
-##### Se ainda não tem o docker e docker-compose instalado, click [aqui](https://docs.docker.com/engine/install/ubuntu/) para ver o passo a passo
+#### Se ainda não tem o ```Docker``` e ```Docker-compose``` instalado, click [aqui](https://docs.docker.com/engine/install/ubuntu/) para ver o passo a passo
 
 ### Hora de iniciar
 
+Configurando o banco
+- Crie um arquivo ```.env``` na raiz do projeto
+- Coloque as seguintes configurações e salve o arquivo
+```
+    DATABASE_NAME=locadora
+    DATABASE_USER=sammy
+    DATABASE_PASSWORD=password
+    DATABASE_HOST=database
+```
+
 #### ⚠️ Atenção: os comandos a seguir pode demorar um pouco para ser finalizados, então tenha paciência :)
 
-##### Primeiro, compile as imagens de contêiner e crie os serviços, executando o docker-compose up com a flag -d, que executará os contêineres em segundo plano:
+##### Primeiro, compile as imagens de contêiner e crie os serviços, executando o ```docker-compose up``` com a flag ```-d```, que executará os contêineres em segundo plano:
 ```
 docker-compose up -d
 ```
