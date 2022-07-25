@@ -74,7 +74,7 @@ docker-compose ps
 docker-compose exec app bundle exec rake db:setup db:migrate
 ```
 
-⚠️  Pode ser que o comando ```docker-compose exec app bundle exec rake db:setup db:migrate``` também popula o banco de dados, caso não esteja populando execute ```docker-compose exec app bundle exec rake db:seed```
+⚠️  Pode ser que o comando ```docker-compose exec app bundle exec rake db:setup db:migrate``` também popula o banco de dados, caso não esteja populando execute ```docker-compose exec app bundle exec rake db:seed```<br />
 
 ![](./image-1.PNG)
 ![alt text](./image-2.PNG)
