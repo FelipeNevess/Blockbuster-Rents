@@ -1,19 +1,19 @@
 default: &default
   adapter: postgresql
   encoding: unicode
+  database: <%= ENV['DATABASE_NAME'] %>
+  username: <%= ENV['DATABASE_USER'] %>
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  port: <%= ENV['DATABASE_PORT'] || '5432' %>
+  host: <%= ENV['DATABASE_HOST'] %>
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   timeout: 5000
 
 development:
   <<: *default
-  database: Locadora_development
 
 test:
   <<: *default
-  database: Locadora_test
 
 production:
   <<: *default
-  database: <%= ENV['DATABASE_URL'] %>
-  # username: Locadora
-  # password: <%= ENV['LOCADORA_DATABASE_PASSWORD'] %>
