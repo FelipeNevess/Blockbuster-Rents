@@ -16,12 +16,17 @@ services:
     env_file: .env
     environment:
       RAILS_ENV: development
+    restart: always
 
   database:
     image: postgres:12.1
     volumes:
       - db_data:/var/lib/postgresql/data
       - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+    labels:
+      description: "Postgresql Database"
+      service: "postgresql"
+    restart: always
 
 volumes:
   gem_cache:
