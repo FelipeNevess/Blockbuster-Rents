@@ -57,18 +57,14 @@ Configurando o banco
 ```
 docker-compose up -d
 ```
-
 ##### Você também pode obter informações mais detalhadas sobre os processos de inicialização nos logs do contêiner
-
 ```
 docker-compose logs
 ```
-
 ##### Você também pode verificar o status dos seus contêineres com o docker-compose ps:
 ```
 docker-compose ps
 ```
-
 ##### Em seguida, rode o seguinte comando para criar o banco de dados e criar as tabelas do banco (migrations)
 ```
 docker-compose exec app bundle exec rake db:setup db:migrate
