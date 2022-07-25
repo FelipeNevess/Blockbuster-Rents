@@ -37,34 +37,40 @@ Criei um programa em python para fazer raspagem de dados de um certo site, todo 
 
 ## Iniciar aplicação
 
-##### Se ainda não tem o docker e docker-compose instalado, click [aqui](https://docs.docker.com/engine/install/ubuntu/) para ver o passo a passo
+#### Se ainda não tem o ```Docker``` e ```Docker-compose``` instalado, click [aqui](https://docs.docker.com/engine/install/ubuntu/) para ver o passo a passo
 
 ### Hora de iniciar
 
+Configurando o banco
+- Crie um arquivo ```.env``` na raiz do projeto
+- Coloque as seguintes configurações e salve o arquivo
+```
+    DATABASE_NAME=locadora
+    DATABASE_USER=sammy
+    DATABASE_PASSWORD=password
+    DATABASE_HOST=database
+```
+
 #### ⚠️ Atenção: os comandos a seguir pode demorar um pouco para ser finalizados, então tenha paciência :)
 
-##### Primeiro, compile as imagens de contêiner e crie os serviços, executando o docker-compose up com a flag -d, que executará os contêineres em segundo plano:
+##### Primeiro, compile as imagens de contêiner e crie os serviços, executando o ```docker-compose up``` com a flag ```-d```, que executará os contêineres em segundo plano:
 ```
 docker-compose up -d
 ```
-
 ##### Você também pode obter informações mais detalhadas sobre os processos de inicialização nos logs do contêiner
-
 ```
 docker-compose logs
 ```
-
 ##### Você também pode verificar o status dos seus contêineres com o docker-compose ps:
 ```
 docker-compose ps
 ```
-
 ##### Em seguida, rode o seguinte comando para criar o banco de dados e criar as tabelas do banco (migrations)
 ```
 docker-compose exec app bundle exec rake db:setup db:migrate
 ```
 
-⚠️  Pode ser que o comando ```docker-compose exec app bundle exec rake db:setup db:migrate``` também popula o banco de dados, caso não esteja populando execute ```docker-compose exec app bundle exec rake db:seed```
+⚠️  Pode ser que o comando ```docker-compose exec app bundle exec rake db:setup db:migrate``` também popula o banco de dados, caso não esteja populando execute ```docker-compose exec app bundle exec rake db:seed```<br />
 
 ![](./image-1.PNG)
 ![alt text](./image-2.PNG)
