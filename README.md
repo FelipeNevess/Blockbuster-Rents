@@ -72,6 +72,12 @@ docker-compose exec app bundle exec rake db:setup db:migrate
 
 ⚠️  Pode ser que o comando ```docker-compose exec app bundle exec rake db:setup db:migrate``` também popula o banco de dados, caso não esteja populando execute ```docker-compose exec app bundle exec rake db:seed```<br />
 
+##### Caso queira deletar, execute o seguinte comando
+```
+docker-compose down --rmi local --volumes --remove-orphans
+```
+
+
 ![](./image-1.PNG)
 ![alt text](./image-2.PNG)
 ![alt text](./image-3.PNG)
