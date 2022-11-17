@@ -81,3 +81,4 @@ docker-compose down --rmi local --volumes --remove-orphans
 ![](./image-1.PNG)
 ![alt text](./image-2.PNG)
 ![alt text](./image-3.PNG)
+![alt text](./mobile.gif)
